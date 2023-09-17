@@ -39,11 +39,13 @@ public class PostController {
 
 
     @PutMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     void update(@RequestBody Post post, @PathVariable String id) {
         postService.update(post, id);
     }
 
     @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     void delete(@PathVariable String id) {
         postService.delete(id);
     }
